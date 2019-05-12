@@ -1,15 +1,20 @@
 <template>
   <div id="vuepress-theme-meteorlxy">
-    <TheHeader />
-
-    <TheMain />
+    <div class="row">
+      <div class="col s3 padding-zero margin-zero">
+        <TheNav />
+      </div>
+      <div class="col s9">
+        <TheMain />
+      </div>
+    </div>
 
     <TheFooter />
   </div>
 </template>
 
 <script>
-import TheHeader from '../components/TheHeader.vue'
+import TheNav from '../components/TheNav.vue'
 import TheMain from '../components/TheMain.vue'
 import TheFooter from '../components/TheFooter.vue'
 
@@ -17,11 +22,12 @@ export default {
   name: 'ThemeMeteorlxy',
 
   components: {
-    TheHeader,
+    TheNav,
     TheMain,
     TheFooter,
   },
 }
 </script>
-
-<style lang="stylus" src="../styles/index.styl" />
+<style lang="stylus" scoped>
+@require '~@theme/styles/helper';
+</style>
