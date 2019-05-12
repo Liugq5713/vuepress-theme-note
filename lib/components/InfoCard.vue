@@ -1,5 +1,22 @@
 <template>
-  <div class="info-card">
+  <div class="user-view">
+    <div class="background">
+      <img src="https://wpimg.wallstcn.com/239678fe-5c57-419d-9274-ff66183f69e8.jpg">
+    </div>
+    <a href="#user">
+      <img
+        class="circle"
+        :src="avatar"
+      >
+    </a>
+    <a href="#name">
+      <span class="white-text name">John Doe</span>
+    </a>
+    <a href="#email">
+      <span class="white-text email">jdandturk@gmail.com</span>
+    </a>
+  </div>
+  <!-- <div class="info-card">
     <div
       class="info-card-header"
       :style="headerStyle"
@@ -76,107 +93,169 @@
         </a>
       </section>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>
-import IconInfo from './IconInfo.vue'
-import IconSns from './IconSns.vue'
-import GeoPattern from 'geopattern'
+// import IconInfo from './IconInfo.vue'
+// import IconSns from './IconSns.vue'
+// import GeoPattern from 'geopattern'
 
-export default {
-  name: 'InfoCard',
+// export default {
+//   name: 'InfoCard',
 
-  components: {
-    IconInfo,
-    IconSns,
-  },
+//   components: {
+//     IconInfo,
+//     IconSns,
+//   },
 
-  computed: {
-    info () {
-      return this.$themeConfig.personalInfo || {}
-    },
+//   computed: {
+//     info () {
+//       return this.$themeConfig.personalInfo || {}
+//     },
 
-    nickname () {
-      return this.info.nickname || 'Unknown'
-    },
+//     nickname () {
+//       return this.info.nickname || 'Unknown'
+//     },
 
-    description () {
-      return this.info.description || null
-    },
+//     description () {
+//       return this.info.description || null
+//     },
 
-    location () {
-      return this.info.location || null
-    },
+//     location () {
+//       return this.info.location || null
+//     },
 
-    email () {
-      return this.info.email || null
-    },
+//     email () {
+//       return this.info.email || null
+//     },
 
-    organization () {
-      return this.info.organization || null
-    },
+//     organization () {
+//       return this.info.organization || null
+//     },
 
-    avatar () {
-      return this.info.avatar || '/assets/img/avatar_unknown.jpg'
-    },
+//     avatar () {
+//       return this.info.avatar || '/assets/img/avatar_unknown.jpg'
+//     },
 
-    sns () {
-      return this.info.sns || null
-    },
+//     sns () {
+//       return this.info.sns || null
+//     },
 
-    headerStyle () {
-      return {
-        'background-image': !this.$ssrContext ? GeoPattern.generate(this.nickname, { color: '#eee' }).toDataUrl() : null,
-      }
-    },
-  },
-}
+//     headerStyle () {
+//       return {
+//         'background-image': !this.$ssrContext
+//           ? GeoPattern.generate(this.nickname, { color: '#eee' }).toDataUrl()
+//           : null,
+//       }
+//     },
+//   },
+// }
+//
 </script>
 
 <style lang="stylus" scoped>
-@require '~@theme/styles/variables'
 
-$headerBgHeight = 150px
-$avatarHeight = 120px
+// @require '~@theme/styles/variables';
 
-.info-card
-  padding 0
-  a
-    color $grayTextColor
-    font-weight normal
-  .info-card-header
-    height $headerBgHeight
-    margin-bottom $avatarHeight * 0.5
-    .info-avatar
-      display block
-      width $avatarHeight
-      height $avatarHeight
-      margin 0 auto
-      border 3px solid #fff
-      border-radius 50%
-      box-shadow: 0 0 2px alpha(black, 0.2)
-      transform translateY($headerBgHeight - $avatarHeight * 0.5)
-  .info-card-body
-    cursor default
-    padding 1rem
-    border-bottom 1px solid $borderColor
-    text-align center
-    .info-nickname
-      display block
-      font-size 1.5rem
-      font-weight bold
-      text-align center
-    .info-desc
-      margin 1rem 0
-    .info-contact
-      color $grayTextColor
-      word-break break-all
-      line-height 160%
-      .icon
-        fill $grayTextColor
-  .info-card-footer
-    text-align center
-    padding 1rem
+// $headerBgHeight = 150px;
+
+// $avatarHeight = 120px;
+
+// .info-card {
+
+//   padding: 0;
+
+//   a {
+
+//     color: $grayTextColor;
+
+//     font-weight: normal;
+
+//   }
+
+//   .info-card-header {
+
+//     height: $headerBgHeight;
+
+//     margin-bottom: $avatarHeight * 0.5;
+
+//     .info-avatar {
+
+//       display: block;
+
+//       width: $avatarHeight;
+
+//       height: $avatarHeight;
+
+//       margin: 0 auto;
+
+//       border: 3px solid #fff;
+
+//       border-radius: 50%;
+
+//       box-shadow: 0 0 2px alpha(black, 0.2);
+
+//       transform: translateY($headerBgHeight - $avatarHeight * 0.5);
+
+//     }
+
+//   }
+
+//   .info-card-body {
+
+//     cursor: default;
+
+//     padding: 1rem;
+
+//     border-bottom: 1px solid $borderColor;
+
+//     text-align: center;
+
+//     .info-nickname {
+
+//       display: block;
+
+//       font-size: 1.5rem;
+
+//       font-weight: bold;
+
+//       text-align: center;
+
+//     }
+
+//     .info-desc {
+
+//       margin: 1rem 0;
+
+//     }
+
+//     .info-contact {
+
+//       color: $grayTextColor;
+
+//       word-break: break-all;
+
+//       line-height: 160%;
+
+//       .icon {
+
+//         fill: $grayTextColor;
+
+//       }
+
+//     }
+
+//   }
+
+//   .info-card-footer {
+
+//     text-align: center;
+
+//     padding: 1rem;
+
+//   }
+
+// }
 
 </style>
